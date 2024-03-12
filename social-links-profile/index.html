@@ -1,34 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Social links profile</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Social links profile</title>
 
-  Jessica Randall
-  London, United Kingdom
-  "Front-end developer and avid reader."
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-  GitHub
-  Frontend Mentor
-  LinkedIn
-  Twitter
-  Instagram
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      :root {
+        /* Colors */
+        --green-primary: hsl(75, 94%, 57%);
+
+        --white-neutral: hsl(0, 0%, 100%);
+        --grey-neutral: hsl(0, 0%, 20%);
+        --darkgrey-neutral: hsl(0, 0%, 12%);
+        --offblack-neutral: hsl(0, 0%, 8%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
+
+        color: var(--white-neutral);
+        background-color: var(--offblack-neutral);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--white-neutral);
+      }
+
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        border-radius: 15px;
+
+        background-color: var(--darkgrey-neutral);
+      }
+
+      .user-pic {
+        width: 5rem;
+        border-radius: 50%;
+      }
+
+      .username {
+        font-size: 22px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+
+      .user-location {
+        color: var(--green-primary);
+        margin-top: 15px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .description {
+        margin-top: 40px;
+        font-weight: 400;
+        text-align: center;
+        padding: 0 20px;
+        /* color: ; */
+      }
+
+      .social-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        margin-top: 30px;
+      }
+
+      .social-links a {
+        width: 100%;
+      }
+
+      .link:hover {
+        background-color: var(--green-primary);
+        color: var(--offblack-neutral);
+        font-weight: 700;
+      }
+
+      .link {
+        width: 100%;
+        background-color: var(--grey-neutral);
+        padding: 10px 0;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card-container">
+      <img
+        src="./assets/images/avatar-jessica.jpeg"
+        alt="User Profile Picture"
+        class="user-pic"
+      />
+      <h1 class="username">Jessica Randall</h1>
+      <h2 class="user-location">London, United Kingdom</h2>
+      <p class="description">"Front-end developer and avid reader."</p>
+      <ul class="social-links">
+        <a href="#"><li class="link">GitHub</li></a>
+        <a href="#"><li class="link">Frontend Mentor</li></a>
+        <a href="#"><li class="link">LinkedIn</li></a>
+        <a href="#"><li class="link">Twitter</li></a>
+        <a href="#"><li class="link">Instagram</li></a>
+      </ul>
+    </main>
+  </body>
 </html>
