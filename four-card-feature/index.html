@@ -10,28 +10,179 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    :root {
+
+      /* Colors */
+      --red-primary: hsl(0, 78%, 62%);
+      --cyan-primary: hsl(180, 62%, 55%);
+      --orange-primary: hsl(34, 97%, 64%);
+      --blue-primary: hsl(212, 86%, 64%);
+
+      --very-dark-blue-neutral: hsl(234, 12%, 34%);
+      --grayish-blue-neutral: hsl(229, 6%, 66%);
+      --very-light-gray-neutral: hsl(0, 0%, 98%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      line-height: 1.5;
+      font-size: 1.5rem;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6.0rem 2.5rem;
+
+      background-color: var(--very-light-gray-neutral);
+      color: var(--grayish-blue-neutral);
+    }
+
+    h1 {
+      font-weight: 200;
+      text-align: center;
+      font-size: clamp(2.4rem, 4vw, 2.8rem);
+    }
+
+    .headings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bold-text {
+      font-weight: 600;
+      color: var(--very-dark-blue-neutral);
+    }
+
+    .description {
+      text-align: center;
+      margin-top: 2.0rem;
+      font-size: clamp(0.5rem, 4vw, 1.5rem);
+      max-width: 60%;
+    }
+
+    .feature-cards {
+      margin-top: 5.0rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 35.2rem;
+      padding: 2.9rem 2.5rem;
+      border-radius: 0.5rem;
+      border-top: 0.5rem solid transparent;
+      box-shadow: 0rem 0.5rem 1.0rem 0rem rgba(216, 226, 238, 0.75);
+    }
+
+    .card:nth-last-of-type(1) {
+      border-color: var(--blue-primary);
+    }
+    .card:nth-last-of-type(2) {
+      border-color: var(--orange-primary);
+    }
+    .card:nth-last-of-type(3) {
+      border-color: var(--red-primary);
+    }
+    .card:nth-last-of-type(4) {
+      border-color: var(--cyan-primary);
+    }
+
+    .card-heading {
+      color: var(--very-dark-blue-neutral);
+      font-size: clamp(1.5rem, 4vw, 2.4);
+    }
+
+    .card-description {
+      margin-top: 0.8rem;
+    }
+
+    .card-img-div {
+      margin-top: 2.5rem;
+    }
+
+    .card img {
+      display: block;
+      margin-top: 2.5rem;
+      margin-left: auto;
+    }
+
+    @media (min-width: 780px) {
+      .feature-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .feature-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .card:nth-child(2),
+      .card:nth-child(3) {
+        grid-column: 2;
+      }
+
+      .feature-cards .down {
+        transform: translateY(50%);
+      }
+
+      .feature-cards .up {
+        transform: translateY(-50%);
+      }
+    }
+
    
   </style>
 </head>
 <body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
+    <div class="headings">
+      <h1>Reliable, efficient delivery</h1>
+      <h1 class="bold-text">Powered by Technology</h1>
+      <p class="description">Our Artificial Intelligence powered tools use millions of project data points 
+        to ensure that your project is successful</p>
+    </div>
+    <div class="feature-cards">
+      <div class="card down">
+        <h2 class="card-heading">Supervisor</h2>
+        <p class="card-description">Monitors activity to identify project roadblocks</p>
+        <img src="./images/icon-supervisor.svg" alt="Feature Image" class="card-img" />
+      </div>
 
-  Supervisor
-  Monitors activity to identify project roadblocks
+      <div class="card">
+        <h2 class="card-heading">Team Builder</h2>
+        <p class="card-description">Scans our talent network to create the optimal team for your project</p>
+        <img src="./images/icon-team-builder.svg" alt="Feature Image" class="card-img" />
+      </div>
 
-  Team Builder
-  Scans our talent network to create the optimal team for your project
+      <div class="card">
+        <h2 class="card-heading">Karma</h2>
+        <p class="card-description">Regularly evaluates our talent to ensure quality</p>
+        <img src="./images/icon-karma.svg" alt="Feature Image" class="card-img" />
+      </div>
 
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
+      <div class="card up">
+        <h2 class="card-heading">Calculator</h2>
+        <p class="card-description">Uses data from past projects to provide better delivery estimates</p>
+        <img src="./images/icon-calculator.svg" alt="Feature Image" class="card-img" />
+      </div>
+      
+    </div>
 
   
 </body>
