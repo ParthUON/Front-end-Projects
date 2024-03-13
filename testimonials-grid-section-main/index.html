@@ -1,76 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Daniel Clifford
-  Verified Graduate
+    <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  I received a job offer mid-course, and the subjects I learned were current, if not more so, 
-  in the company I joined. I honestly feel I got every penny’s worth.
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-  “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a 
-  transition and have heard some people who had an amazing experience here. I signed up 
-  for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
-  The next 12 weeks was the best - and most grueling - time of my life. Since completing 
-  the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+      :root {
+        /* Font */
+        --barlow-font: "Barlow Semi Condensed"; /*ss*/
 
-  Jonathan Walters
-  Verified Graduate
+        /* Colors */
+        --moderate-violet-primary: hsl(263, 55%, 52%);
+        --very-dark-grayish-blue-primary: hsl(217, 19%, 35%);
+        --very-dark-blackish-blue-primary: hsl(219, 29%, 14%);
+        --white-primary: hsl(0, 0%, 100%);
 
-  The team was very supportive and kept me motivated
+        --light-gray-neutral: hsl(0, 0%, 81%);
+        --light-grayish-blue-neutral: hsl(210, 46%, 95%);
+      }
 
-  “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
-  for a big company. This was one of the best investments I’ve made in myself. ”
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  Jeanette Harmon
-  Verified Graduate
+      html {
+        font-size: 62.5%;
+      }
 
-  An overall wonderful and rewarding experience
+      body {
+        min-height: 100vh;
+        font-family: var(--barlow-font);
+        font-weight: 500;
+        font-size: 1.3rem;
 
-  “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
-  while doing something I love. ”
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-  Patrick Abrams
-  Verified Graduate
+        background-color: var(--light-grayish-blue-neutral);
+      }
 
-  Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
-  learning from their experiences was easy.
+      .white-title-text {
+        color: var(--white-primary);
+      }
 
-  “ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
-  gave me the confidence necessary to be able to go out in the world and present myself as a capable 
-  junior developer. The standard is above the rest. You will get the personal attention you need from 
-  an incredible community of smart and amazing people. ”
+      .black-title-text {
+        color: var(--very-dark-grayish-blue-primary);
+      }
 
-  Kira Whittle
-  Verified Graduate
+      .container {
+        width: min(95%, 112rem);
+        padding-block: 2rem;
+        margin-inline: auto;
 
-  Such a life-changing experience. Highly recommended!
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-areas: 
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+        gap: 2.5rem;
+      }
 
-  “ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from 
-  professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
-  student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
-  did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
-  project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
-  could ever have. In fact, I’ve often referred to it during interviews as an example of my developent 
-  experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
-  100% recommend! ”
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .testimonials-card {
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 4rem 6rem 4.8rem -4.8rem var(
+            --very-dark-grayish-blue-primary
+          ) / 0.25;
+      }
+
+      .testimonials-card:nth-child(1) {
+        grid-area: one;
+      }
+
+      .testimonials-card:nth-child(2) {
+        grid-area: two;
+      }
+
+      .testimonials-card:nth-child(3) {
+        grid-area: three;
+      }
+
+      .testimonials-card:nth-child(4) {
+        grid-area: four;
+      }
+
+      .testimonials-card:nth-child(5) {
+        grid-area: five;
+      }
+
+      @media screen and (min-width: 33em) {
+        .container {
+          grid-template-areas: 
+          "one one"
+          "two three"
+          "five five"
+          "four four";
+        }
+      }
+
+      @media screen and (min-width: 38em) {
+        .container {
+          grid-template-areas: 
+          "one one"
+          "two five"
+          "three five"
+          "four four";
+        }
+      }
+
+      @media screen and (min-width: 54em) {
+        .container {
+          grid-template-areas: 
+          "one one two"
+          "five five five"
+          "three four four";
+        }
+      }
+
+      @media screen and (min-width: 75em) {
+        .container {
+          grid-template-areas: 
+          "one one two five"
+          "three four four five";
+        }
+      }
+
+      .bg-primary-400 {
+        background: var(--moderate-violet-primary);
+      }
+
+      .bg-secondary-400 {
+        background: var(--very-dark-grayish-blue-primary);
+      }
+
+      .bg-secondary-500 {
+        background: var(--very-dark-blackish-blue-primary);
+      }
+
+      .bg-neutral-100 {
+        background: var(--white-primary);
+      }
+
+      .quote {
+        background-image: url(./images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right 10%;
+      }
+
+      .user-pic {
+        width: 3rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+      }
+
+      .user-name {
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+
+      .user-verifiaction {
+        font-size: 1.1rem;
+        opacity: 0.5;
+      }
+
+      .testimonials-card > p:first-of-type {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .testimonials-card > p:last-of-type {
+        opacity: 0.7;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: var(--gap, 1rem);
+      }
+
+      .flow > *:where(:not(:first-child)) {
+        margin-top: var(--flow-spacer, 1rem);
+      }
+
+      .text-neutral-100 {
+        color: var(--white-primary);
+      }
+
+      .text-secondary-400 {
+        color: var(--very-dark-grayish-blue-primary);
+      }
+
+      .border-primary-400 {
+        border: 2px solid #a775f1;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="testimonials-card flow bg-primary-400 text-neutral-100 quote">
+        <div class="user-details flex">
+          <img
+            src="./images/image-daniel.jpg"
+            alt="User Picture"
+            class="user-pic"
+          />
+          <div class="user-info">
+            <h2 class="user-name">Daniel Clifford</h2>
+            <p class="user-verifiaction">Verified Graduate</p>
+          </div>
+        </div>
+        <p class="testimonial-title">
+          I received a job offer mid-course, and the subjects I learned were
+          current, if not more so, in the company I joined. I honestly feel I
+          got every penny’s worth.
+        </p>
+        <p class="testimonial-desc">
+          “ I was an EMT for many years before I joined the bootcamp. I’ve been
+          looking to make a transition and have heard some people who had an
+          amazing experience here. I signed up for the free intro course and
+          found it incredibly fun! I enrolled shortly thereafter. The next 12
+          weeks was the best - and most grueling - time of my life. Since
+          completing the course, I’ve successfully switched careers, working as
+          a Software Engineer at a VR startup. ”
+        </p>
+      </div>
+
+      <div class="testimonials-card flow bg-secondary-400 text-neutral-100">
+        <div class="user-details flex">
+          <img
+            src="./images/image-jonathan.jpg"
+            alt="User Picture"
+            class="user-pic"
+          />
+          <div class="user-info">
+            <h2 class="user-name">Jonathan Walters</h2>
+            <p class="user-verifiaction">Verified Graduate</p>
+          </div>
+        </div>
+        <p class="testimonial-title">
+          The team was very supportive and kept me motivated
+        </p>
+        <p class="testimonial-desc">
+          “ I started as a total newbie with virtually no coding skills. I now
+          work as a mobile engineer for a big company. This was one of the best
+          investments I’ve made in myself. ”
+        </p>
+      </div>
+
+      <div class="testimonials-card flow bg-neutral-100 text-secondary-400">
+        <div class="user-details flex">
+          <img
+            src="./images/image-jeanette.jpg"
+            alt="User Picture"
+            class="user-pic"
+          />
+          <div class="user-info">
+            <h2 class="user-name">Jeanette Harmon</h2>
+            <p class="user-verifiaction">Verified Graduate</p>
+          </div>
+        </div>
+        <p class="testimonial-title">
+          An overall wonderful and rewarding experience
+        </p>
+        <p class="testimonial-desc">
+          “ Thank you for the wonderful experience! I now have a job I really
+          enjoy, and make a good living while doing something I love. ”
+        </p>
+      </div>
+
+      <div class="testimonials-card flow bg-secondary-500 text-neutral-100">
+        <div class="user-details flex">
+          <img
+            src="./images/image-patrick.jpg"
+            alt="User Picture"
+            class="user-pic"
+          />
+          <div class="user-info">
+            <h2 class="user-name">Patrick Abrams</h2>
+            <p class="user-verifiaction">Verified Graduate</p>
+          </div>
+        </div>
+        <p class="testimonial-title">
+          Awesome teaching support from TAs who did the bootcamp themselves.
+          Getting guidance from them and learning from their experiences was
+          easy.
+        </p>
+        <p class="testimonial-desc">
+          “ The staff seem genuinely concerned about my progress which I find
+          really refreshing. The program gave me the confidence necessary to be
+          able to go out in the world and present myself as a capable junior
+          developer. The standard is above the rest. You will get the personal
+          attention you need from an incredible community of smart and amazing
+          people. ”
+        </p>
+      </div>
+
+      <div class="testimonials-card flow bg-neutral-100 text-secondary-400">
+        <div class="user-details flex">
+          <img
+            src="./images/image-kira.jpg"
+            alt="User Picture"
+            class="user-pic"
+          />
+          <div class="user-info">
+            <h2 class="user-name">Kira Whittle</h2>
+            <p class="user-verifiaction">Verified Graduate</p>
+          </div>
+        </div>
+        <p class="testimonial-title">
+          Such a life-changing experience. Highly recommended!
+        </p>
+        <p class="testimonial-desc">
+          “ Before joining the bootcamp, I’ve never written a line of code. I
+          needed some structure from professionals who can help me learn
+          programming step by step. I was encouraged to enroll by a former
+          student of theirs who can only say wonderful things about the program.
+          The entire curriculum and staff did not disappoint. They were very
+          hands-on and I never had to wait long for assistance. The agile team
+          project, in particular, was outstanding. It took my learning to the
+          next level in a way that no tutorial could ever have. In fact, I’ve
+          often referred to it during interviews as an example of my developent
+          experience. It certainly helped me land a job as a full-stack
+          developer after receiving multiple offers. 100% recommend! ”
+        </p>
+      </div>
+    </main>
+  </body>
 </html>
